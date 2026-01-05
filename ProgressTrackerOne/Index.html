@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mana's Native Activity & Habit Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- Hero section with affirmation -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Grounded. Focused. Consistent.</h1>
+      <p id="affirmationText">Today I show up for myself with calm, clarity, and purpose.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Checklist and stats -->
+    <section class="controls">
+      <!-- Daily checklist -->
+      <div class="control-card">
+        <h2>Today’s checklist</h2>
+        <div class="task-list">
+          <div class="task">
+            <label><input type="checkbox" data-task="morningPrayer" /> <span>Morning Prayer</span></label>
+            <input type="time" class="task-time" data-task-time="morningPrayer" />
+          </div>
+          <div class="task">
+            <label><input type="checkbox" data-task="eveningPrayer" /> <span>Evening Prayer</span></label>
+            <input type="time" class="task-time" data-task-time="eveningPrayer" />
+          </div>
+          <div class="task">
+            <label><input type="checkbox" data-task="cleanRoom" /> <span>Cleaning room</span></label>
+            <input type="time" class="task-time" data-task-time="cleanRoom" />
+          </div>
+          <div class="task">
+            <label><input type="checkbox" data-task="learnFinance" /> <span>Learning: Financial skill</span></label>
+            <input type="time" class="task-time" data-task-time="learnFinance" />
+          </div>
+          <div class="task">
+            <label><input type="checkbox" data-task="learnIT" /> <span>Learning: IT / Coding</span></label>
+            <input type="time" class="task-time" data-task-time="learnIT" />
+          </div>
+          <div class="task">
+            <label><input type="checkbox" data-task="wakeUpOnTime" /> <span>Waking up on time</span></label>
+            <input type="time" class="task-time" data-task-time="wakeUpOnTime" />
+          </div>
+          <!-- ✅ New sobriety tracker -->
+          <div class="task">
+            <label><input type="checkbox" data-task="sobrietyCheck" /> <span>Sobriety commitment</span></label>
+            <input type="time" class="task-time" data-task-time="sobrietyCheck" />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="saveTodayBtn">Save today</button>
+          <button id="exportICSBtn">Add to iPhone Calendar</button>
+        </div>
+      </div>
+
+      <!-- Stats section -->
+      <div class="control-card">
+        <h2>Streaks and progress</h2>
+        <div class="stats">
+          <div class="stat"><span>Current streak</span><strong id="streakCount">0 days</strong></div>
+          <div class="stat"><span>Avg completion</span><strong id="avgCompletion">0%</strong></div>
+          <div class="stat"><span>Wake-up consistency</span><strong id="wakeConsistency">0%</strong></div>
+          <!-- ✅ New sobriety streak stat -->
+          <div class="stat"><span>Sobriety streak</span><strong id="sobrietyStreak">0 days</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="calendar-section">
+      <h2>Monthly habit calendar</h2>
+      <div class="calendar-controls">
+        <button id="prevMonthBtn">Prev</button>
+        <div id="monthLabel"></div>
+        <button id="nextMonthBtn">Next</button>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+      <div class="legend">
+        <span class="dot green"></span> Completed
+        <span class="dot red"></span> Outstanding
+      </div>
+    </section>
+
+    <!-- Motivation section -->
+    <section class="motivation-section">
+      <h2>Motivation</h2>
+      <div class="motivation">
+        <img id="motivationImage" src="" alt="Motivational" />
+        <blockquote id="motivationQuote">Small, consistent actions compound into meaningful change.</blockquote>
+      </div>
+    </section>
+
+    <!-- Weekly review -->
+    <section class="weekly-review">
+      <h2>Weekly review</h2>
+      <div id="weeklySummary"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for steady growth. Keep going.</p>
+  </footer>
+</body>
+</html>
